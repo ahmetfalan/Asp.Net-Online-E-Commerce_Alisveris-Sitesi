@@ -1,0 +1,43 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="yonetim.master.cs" Inherits="yonetim_yonetim" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="http://jqueryjs.googlecode.com/files/jquery-1.2.6.min.js" type="text/javascript"></script>
+    <link href="~/css/yonetim.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="menuKaplayici">
+        <div class="menu">
+            <ul>
+                <li><a runat="server" id="anasayfa" href="yonetim.aspx"><i class="glyphicon glyphicon-book">
+                </i>&nbsp;Ürün İşlemleri</a></li>
+                <li><a runat="server" id="reklam" href="reklam.aspx"><i class="glyphicon glyphicon-usd">
+                </i>&nbsp;Reklam İşlemleri</a></li>
+                <li><a runat="server" id="yorum" href="yorum.aspx"><i class="glyphicon glyphicon-comment">
+                </i>&nbsp;Yorum İşlemleri</a></li>
+                <li><a runat="server" id="kullanici" href="kullanici.aspx"><i class="glyphicon glyphicon-user">
+                </i>&nbsp;Kullanıcı İşlemleri</a></li>
+                <li><a runat="server" id="ayarlar" href="ayarlar.aspx"><i class="glyphicon glyphicon-cog">
+                </i>&nbsp;Ayarlar</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="kap">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+</body>
+</html>

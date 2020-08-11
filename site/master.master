@@ -1,0 +1,217 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="master.master.cs" Inherits="master" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <link href="css/anasayfa.css" rel="stylesheet" type="text/css" />
+    <link href="css/anaStyle.css" rel="stylesheet" type="text/css" />
+    <link href="css/urun.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="css/elastislide.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
+    <script type="text/javascript" src="js/modernizr.custom.17475.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquerypp.custom.js"></script>
+    <script type="text/javascript" src="js/jquery.elastislide.js"></script>
+</head>
+<body style="position: relative;">
+    <form id="form1" runat="server">
+    <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server">
+    </asp:ToolkitScriptManager>
+    <div class="menuKaplayici">
+        <a href="<%= Page.ResolveUrl("~")%>giyingiydirin.aspx">
+            <div class="logo">
+                <img src="<%= Page.ResolveUrl("~")%>logo/logo.png" width="150px" height="auto" />
+            </div>
+        </a>
+        <div class="menu">
+            <ul>
+                <li><a href="<%= Page.ResolveUrl("~")%>giyingiydirin.aspx">Anasayfa</a> </li>
+                <li><a href="#">Giyim&nbsp;<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                    <ul>
+                        <li><a href="erkekgiyim.aspx">Erkek Giyim</a></li>
+                        <li><a href="kadingiyim.aspx">Kadın Giyim</a></li>
+                        <li><a href="cocukgiyim.aspx">Çocuk Giyim</a></li>
+                        <li><a href="taki.aspx">Takı</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Hakkımızda&nbsp;<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                    <ul>
+                        <li><a href="#">Misyonumuz</a></li>
+                        <li><a href="#">Vizyonumuz</a></li>
+                        <li><a href="#">Sponsorlarımız</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Yardım&nbsp;<span class="glyphicon glyphicon-menu-down" aria-hidden="true"></span></a>
+                    <ul>
+                        <li><a href="<%= Page.ResolveUrl("~")%>iletisim.aspx">İletişim</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><span class="glyphicon glyphicon-remove"></span></a>
+            <asp:DataList ID="DataList1" runat="server">
+                <ItemTemplate>
+                    <asp:Image ID="Image1" runat="server" ImageUrl='<%# Eval("reklam") %>' Width="120px"
+                        Height="120px" />
+                </ItemTemplate>
+            </asp:DataList>
+        </div>
+        <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "120px";
+            }
+
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+            }
+        </script>
+    </div>
+    <div class="mostmain" id="main">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="modal fade giris" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="uyekaplayici">
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                        <ContentTemplate>
+                            <h3>
+                                Giriş</h3>
+                            <div>
+                                Kullanıcı Adı:<asp:TextBox ID="txtKullaniciAdi" CssClass="form-control" runat="server">
+                                </asp:TextBox><br />
+                                Şifre:<br />
+                                <asp:TextBox ID="txtSif" CssClass="form-control" runat="server">
+                                </asp:TextBox><br />
+                                <asp:Button ID="btnGiris" runat="server" Text="Giriş" CssClass="btn btn-default btn-lg"
+                                    OnClick="btnGiris_Click" />&nbsp;
+                                <asp:Button ID="btnKO" runat="server" Text="Kayıt Ol" CssClass="btn btn-default btn-lg"
+                                    data-toggle="modal" data-target=".uyeol" /><br />
+                                <asp:Label ID="lblHata" runat="server" ForeColor="Red"></asp:Label>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="btnGiris" EventName="Click" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="modal fade uyeol" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="uyekaplayici">
+                    <asp:UpdatePanel ID="UpdatePanel2" runat="server">
+                        <ContentTemplate>
+                            <h3>
+                                <asp:Label ID="lblKayitOl" runat="server" Text="Kayıt Ol"></asp:Label></h3>
+                            Ad:<br />
+                            <asp:TextBox ID="txtAd" runat="server" CssClass="form-control" ControlToValidate="txtAd" />
+                            <br />
+                            Soyad:<br />
+                            <asp:TextBox ID="txtSoyad" runat="server" CssClass="form-control">
+                            </asp:TextBox>
+                            <br />
+                            Kullanıcı Adı:<br />
+                            <asp:TextBox ID="txtKuladi" runat="server" CssClass="form-control">
+                            </asp:TextBox>
+                            <br />
+                            Şifre:<br />
+                            <asp:TextBox ID="txtSifre" runat="server" CssClass="form-control">
+                            </asp:TextBox>
+                            <br />
+                            <asp:Label ID="lblSifreTekrar" runat="server" Text="Şifre(Tekrar):<br />"></asp:Label>
+                            <asp:TextBox ID="txtSifreTekrar" runat="server" CssClass="form-control">
+                            </asp:TextBox>
+                            <br />
+                            E-Mail:<br />
+                            <asp:TextBox ID="txtMail" runat="server" CssClass="form-control">
+                            </asp:TextBox>
+                            <br />
+                            Telefon Numarası:<br />
+                            <asp:TextBox ID="txtTelNo" runat="server" CssClass="form-control">
+                            </asp:TextBox>
+                            <asp:MaskedEditExtender ID="MaskedEditExtender1" runat="server" TargetControlID="txtTelNo"
+                                Mask="9999-999-99-99" MessageValidatorTip="true" ErrorTooltipEnabled="True">
+                            </asp:MaskedEditExtender>
+                            <br />
+                            Adres:<br />
+                            <asp:TextBox ID="txtAdres" Style="resize: none; max-height: 100px; min-height: 100px;
+                                max-width: 400px; min-width: 400px;" runat="server" CssClass="form-control" TextMode="MultiLine">
+                            </asp:TextBox>
+                            Cinsiyet:<br />
+                            <asp:DropDownList ID="txtCinsiyet" runat="server" CssClass="form-control">
+                                <asp:ListItem>Erkek</asp:ListItem>
+                                <asp:ListItem>Kadın</asp:ListItem>
+                            </asp:DropDownList>
+                            <br />
+                            <br />
+                            <asp:Button ID="btnKayit" runat="server" Text="Kayıt Ol" CssClass="btn btn-default btn-lg"
+                                OnClick="btnKayit_Click" ValidationGroup="kayit" />
+                            <asp:Button ID="btnGuncelle" runat="server" Text="Bilgilerimi Güncelle" CssClass="btn btn-default btn-lg"
+                                OnClick="btnGuncelle_Click" ValidationGroup="sa" />
+                            <br />
+                            <asp:Label ID="lblKayitHata" runat="server" ForeColor="Red"></asp:Label>
+                        </ContentTemplate>
+                        <Triggers>
+                            <asp:AsyncPostBackTrigger ControlID="btnKayit" EventName="Click" />
+                        </Triggers>
+                    </asp:UpdatePanel>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="uyebtn">
+        <asp:HyperLink ID="HyperLink1" CssClass="hyperlink" runat="server" data-toggle="modal"
+            data-target=".giris"><span class="glyphicon glyphicon-user"></span>&nbsp;Giriş</asp:HyperLink>
+        <asp:HyperLink ID="HyperLink2" CssClass="hyperlink" runat="server" data-toggle="modal"
+            data-target=".uyeol"><span class="glyphicon glyphicon-pencil"></span>&nbsp;Üye Ol</asp:HyperLink>
+        <asp:Button ID="cikis" runat="server" Visible="false" Text="Hesaptan Çık" OnClick="cikis_Click"
+            ValidationGroup="cik" CssClass="btn btn-default btn-sm" />
+        <asp:Button ID="btnYonetim" runat="server" Text="Yönetim" CssClass="btn btn-default btn-sm"
+            OnClick="btnYonetim_Click" />
+        <asp:Button ID="btnAyarlar" runat="server" Text="Hesap Ayarları" CssClass="btn btn-default btn-sm"
+            data-toggle="modal" data-target=".uyeol" OnClientClick="return false" />
+        <span class="glyphicon glyphicon-th-list slideac" onclick="openNav()"></span>
+    </div>
+    <div class="footer">
+        <div class="kapla">
+            <div class="foothakkinda">
+                Misyonumuz<br />
+                Vizyonumuz<br />
+                Sponsorlarımız<br />
+            </div>
+            <div class="yardim">
+                <a href="iletisim.aspx">İletişim</a><br />
+            </div>
+            <div class="foottakip">
+                <a href="#" class="fa fa-facebook"></a><a href="#" class="fa fa-twitter"></a><a href="#"
+                    class="fa fa-google"></a><a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+        <div class="copyright">
+            2017 &copy; Copyright <a href="<%= Page.ResolveUrl("~")%>giyingiydirin.aspx">Giyin Giydirin</a>
+            Mağazası
+        </div>
+    </div>
+    </form>
+</body>
+</html>

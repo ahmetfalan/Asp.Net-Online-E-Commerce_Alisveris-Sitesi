@@ -1,0 +1,131 @@
+﻿body
+{
+    padding-top: 20px;
+}
+.urunkaplayici
+{
+    margin-top:85px;
+    background-color: White;
+}
+.resim
+{
+    float: left;
+}
+.resimyan
+{
+    float: right;
+    padding: 25px;
+    font-size: 25px;
+}
+.urunisim
+{
+    margin: 15px;
+}
+.urunfiyat
+{
+    margin: 45px;
+}
+.buton
+{
+    margin-left: 410px;
+    margin-top: 140px;
+    position: absolute;
+}
+.multiview
+{
+    border: 3px solid #41A0FF;
+}
+.vmargin
+{
+    padding: 95px;
+}
+.tabmenuposition
+{
+    position: relative;
+}
+.devam
+{
+    bottom: 0px;
+    right: 0px;
+    position: absolute;
+}
+.yorum
+{
+    width: 900px;
+    margin: auto;
+    padding: 7px;
+    margin: 2px;
+    background-color: #F5F5F5;
+    border-right: 2px solid #DCDCDC;
+    border-bottom: 2px solid #DCDCDC;
+    position:relative;
+    word-wrap: break-word;
+}
+.ajax__myTab .ajax__tab_header
+{
+    height: 45px;
+    color: #FFF;
+    font-size: 25px;
+}
+.ajax__myTab .ajax__tab_outer
+{
+    padding-right: 4px;
+    height: 45px;
+    background-color: #fff;
+    margin-right: 1px;
+}
+.ajax__myTab .ajax__tab_inner
+{
+    padding-left: 4px;
+    background-color: #fff;
+}
+.ajax__myTab .ajax__tab_tab
+{
+    height: 45px;
+    padding: 4px;
+    margin: 0;
+}
+.ajax__myTab .ajax__tab_tab:hover
+{
+    height: 45px;
+    padding: 4px;
+    margin: 0;
+}
+.ajax__myTab .ajax__tab_hover .ajax__tab_outer
+{
+    background-color: #41A0FF;
+}
+.ajax__myTab .ajax__tab_hover .ajax__tab_inner
+{
+    background-color: #41A0FF;
+}
+.ajax__myTab .ajax__tab_hover .ajax__tab_tab
+{
+    background-color: #41A0FF;
+    cursor: pointer;
+}
+.ajax__myTab .ajax__tab_active .ajax__tab_outer
+{
+    background-color: #41A0FF;
+    color: White;
+}
+.ajax__myTab .ajax__tab_active .ajax__tab_inner
+{
+    background-color: #41A0FF;
+    color: White;
+}
+.ajax__myTab .ajax__tab_active .ajax__tab_tab
+{
+    background-color: #41A0FF;
+    cursor: inherit;
+    color: White;
+}
+.ajax__myTab .ajax__tab_body
+{
+    border: 3px solid #41A0FF;
+    padding: 6px;
+}
+.ajax__myTab .ajax__tab_disabled
+{
+    color: Gray;
+}
